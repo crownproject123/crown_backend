@@ -1,0 +1,40 @@
+"use strict";
+
+const mongoose = require("mongoose");
+
+const FilledChecklistSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  location: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Location",
+    required: true,
+  },
+  value: {
+    type: mongoose.Schema.Types.Mixed,
+    default: [],
+  },
+
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+FilledChecklistSchema.pre("save", function (next) {
+  const now = new Date();
+  this.updatedAt = now;
+  if (!this.createdAt) {
+    this.createdAt = now;
+  }
+  next();
+});
+
+module.exports = new mongoose.model("FilledChecklist", FilledChecklistSchema);

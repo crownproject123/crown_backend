@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      table td {
+        line-height: 25px;
+        padding-left: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      table th {
+        background-color: #fbc403;
+        color: #363636;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr height="100px" style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 600">
+        <td colspan="4">{{this.organizationName}}</td>
+      </tr>
+      <tr>
+        <th>Personel NO:</th>
+        <td>{{this.id}}</td>
+        <th>Name</th>
+        <td>{{this.name}}</td>
+      </tr>
+      <!-----2 row--->
+      <tr>
+        <th>Bank</th>
+        <td>{{this.bankName}}</td>
+        <th>Bank A/c No.</th>
+        <td>{{this.bankAccountNo}}</td>
+      </tr>
+      <!------5 row---->
+      <tr>
+        <th>Location</th>
+        <td>{{this.location}}</td>
+        <th>Working Days</th>
+        <td>{{this.workingDays}}</td>
+      </tr>
+      <!------6 row---->
+      <tr>
+        <th>Department</th>
+        <td>{{this.department}}</td>
+        <th>Designation</th>
+        <td>{{this.designation}}</td>
+      </tr>
+    </table>
+    <tr></tr>
+    <br />
+    <table border="1">
+      <tr>
+        <th>Earnings</th>
+        <th>Amount</th>
+        <th>Deductions</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Basic</td>
+        <td>{{this.earning_basicSalary}}</td>
+        <td>provident fund</td>
+        <td>{{this.deduction_pf}}</td>
+      </tr>
+      <tr>
+        <td>House Rent Allowance</td>
+        <td>{{this.earning_houseRentAllowance}}</td>
+        <td>Income tax</td>
+        <td>{{this.deduction_tax}}</td>
+      </tr>
+      <tr>
+        <th>Gross Earnings</th>
+        <td>Rs.{{this.gross_earnings}}</td>
+        <th>Gross Deductions</th>
+        <td>Rs.{{this.gross_deductions}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><strong>NET PAY</strong></td>
+        <td>Rs.{{this.net_pay}}</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<!-- {{#each users}}
+<li>Name: {{this.name}}</li>
+<li>Age: {{#ifCond this.age '===' '26'}}</li>
+<br />
+{{/ifCond}}
+{{/each}} -->
